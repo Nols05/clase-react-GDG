@@ -3,6 +3,8 @@
 
 git clone https://github.com/Nols05/clase-react-GDG.git
 
+cd clase-react-GDG
+
 npm install
 
 npm run dev
