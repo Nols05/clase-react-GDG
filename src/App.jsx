@@ -26,7 +26,7 @@ const App = () => {
     }
   }, []);
 
-  const addTodo = (e) => {
+  function addTodo(e) {
     e.preventDefault();
     if (!newTodo.trim()) return;
 
@@ -42,7 +42,7 @@ const App = () => {
     setNewTodo('');
   };
 
-  const toggleTodo = (id) => {
+  function toggleTodo(id) {
     const updatedTodos = todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
@@ -50,7 +50,7 @@ const App = () => {
     localStorage.setItem('todos', JSON.stringify(updatedTodos));
   };
 
-  const deleteTodo = (id) => {
+  function deleteTodo(id) {
     const updatedTodos = todos.filter(todo => todo.id !== id);
     setTodos(updatedTodos);
     localStorage.setItem('todos', JSON.stringify(updatedTodos));
