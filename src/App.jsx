@@ -5,7 +5,6 @@ import './App.css';
 const App = () => {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [newTodo, setNewTodo] = useState('');
 
   useEffect(() => {
     const savedTodos = JSON.parse(localStorage.getItem('todos') || '[]');
@@ -29,18 +28,18 @@ const App = () => {
 
   function addTodo(e) {
     e.preventDefault();
-    if (!newTodo.trim()) return;
+
+    const todoName = e.target.todoName.value;
 
     const todo = {
       id: Date.now(),
-      title: newTodo.trim(),
+      title: todoName,
       completed: false
     };
 
     const updatedTodos = [todo, ...todos];
     setTodos(updatedTodos);
     localStorage.setItem('todos', JSON.stringify(updatedTodos));
-    setNewTodo('');
   };
 
   function toggleTodo(id) {
@@ -64,9 +63,7 @@ const App = () => {
           <h1 className="card-title">Todo List</h1>
           <form onSubmit={addTodo} className="todo-form">
             <input
-              type="text"
-              value={newTodo}
-              onChange={(e) => setNewTodo(e.target.value)}
+              name='todoName'
               placeholder="What needs to be done?"
               className="todo-input"
             />
