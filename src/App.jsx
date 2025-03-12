@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TodoList from './TodoList';
+import './App.css';
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -57,33 +58,30 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
-      <div className="w-full max-w-2xl bg-slate-800 rounded-xl shadow-2xl">
-        <div className="p-8 border-b border-slate-700">
-          <h1 className="text-3xl font-bold text-center text-white mb-6">Todo List</h1>
-          <form onSubmit={addTodo} className="flex gap-2">
+    <div className="app-container">
+      <div className="todo-card">
+        <div className="card-header">
+          <h1 className="card-title">Todo List</h1>
+          <form onSubmit={addTodo} className="todo-form">
             <input
               type="text"
               value={newTodo}
               onChange={(e) => setNewTodo(e.target.value)}
               placeholder="What needs to be done?"
-              className="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 
-                       focus:outline-none focus:ring-2 focus:ring-blue-500 
-                       text-white placeholder-slate-400"
+              className="todo-input"
             />
             <button
               type="submit"
-              className="px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-lg
-                       transition-colors duration-300 font-semibold text-white"
+              className="add-button"
             >
               Add
             </button>
           </form>
         </div>
 
-        <div className="p-6">
+        <div className="list-container">
           {loading ? (
-            <div className="text-center text-slate-400">Loading tasks...</div>
+            <div className="loading-message">Loading tasks...</div>
           ) : (
             <TodoList
               todos={todos}

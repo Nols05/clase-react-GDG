@@ -3,14 +3,14 @@ import TodoItem from './TodoItem';
 const TodoList = ({ todos, onToggle, onDelete }) => {
     if (todos.length === 0) {
         return (
-            <div className="text-center py-8 text-slate-400">
+            <div className="empty-message">
                 No tasks yet. Add one above!
             </div>
         );
     }
 
     return (
-        <div className="space-y-3">
+        <div className="todos-container">
             {todos.map(todo => (
                 <TodoItem
                     key={todo.id}
@@ -19,7 +19,7 @@ const TodoList = ({ todos, onToggle, onDelete }) => {
                     onDelete={onDelete}
                 />
             ))}
-            <div className="mt-6 text-center text-slate-400 text-sm border-t border-slate-700 pt-4">
+            <div className="todo-stats">
                 {todos.filter(t => !t.completed).length} items remaining
             </div>
         </div>
