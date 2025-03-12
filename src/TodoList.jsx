@@ -1,6 +1,6 @@
 import TodoItem from './TodoItem';
 
-export function TodoList({ todos, onToggle, onDelete }) {
+export default function TodoList({ todos, onToggle, onDelete }) {
     if (todos.length === 0) {
         return (
             <div className="empty-message">

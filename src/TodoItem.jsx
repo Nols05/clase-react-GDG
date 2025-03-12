@@ -1,4 +1,4 @@
-const TodoItem = ({ todo, onToggle, onDelete }) => {
+export default function TodoItem({ todo, onToggle, onDelete }) {
     return (
         <div className={`todo-item ${todo.completed ? 'todo-item-completed' : 'todo-item-active'}`}>
             <button
@@ -28,4 +28,3 @@ const TodoItem = ({ todo, onToggle, onDelete }) => {
     );
 };
 
-export default TodoItem;

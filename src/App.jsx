@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import TodoList from './TodoList';
 import './App.css';
 
-const App = () => {
+export default function App() {
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -92,4 +92,3 @@ const App = () => {
   );
 };
 
-export default App;
