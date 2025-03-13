@@ -11,4 +11,4 @@ npm run dev
 
 
 # Link a las diapositivas de la clase:
-(próximamente)
+[(Diapositivas)](https://docs.google.com/presentation/d/1PGWoMze9_PNObXxhK9A2r4akYyiUkMFZS9f3gvtkFCw/edit?usp=sharing)
